@@ -1,38 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Taska .description {
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Taska .description,
+.Taska pre {
+  padding-left: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrap {
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+
+.Tiles {
+  display: grid;
+
+  grid-template-columns: repeat(2, min-content);
+  justify-items: left;
+  gap: 10px;
+}
+
+.Tile {
+  position: relative;
+}
+
+.Tile__title {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  position: absolute;
+  left: 10px;
+}
+
+.Tile__image {
+  border-radius: 4px;
+}
+
+.Buttons {
+  display: flex;
+  gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Button {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 300ms ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Button.Button--disabled {
+  user-select: none;
+  background-color: darkgray;
+  cursor: not-allowed;
+}
+
+.Button:hover {
+  background-color: darkgray;
 }
